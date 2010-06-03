@@ -10,7 +10,7 @@ gem install language-translator
 == Usage 
 
 	require 'rubygems' 
-	require 'language-translator' 
+	require 'translator' 
 	
 	#To translate 'Hello World' to Hindi
 	tr = Translator.new()
