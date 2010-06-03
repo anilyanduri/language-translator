@@ -1,0 +1,23 @@
+= Translator 
+
+== Description
+A gem to translate from one language to another using google api(Unofficial).
+
+== Installation
+
+gem install language-translator
+
+== Usage 
+
+	require 'rubygems' 
+	require 'language-translator' 
+	
+	#To translate 'Hello World' to Hindi
+	tr = Translator.new()
+	tr.translate( 'Hello, World', 'hi')
+	=>"नमस्ते, दुनिया"
+	
+  #To translate "नमस्ते, दुनिया" to English
+  tr.translate('नमस्ते, दुनिया', 'en','hi')
+	=>"Hello World"
+

@@ -1,0 +1,8 @@
+MIT-LICENSE
+Manifest
+README.rdoc
+Rakefile
+language-translator.gemspec
+lib/translator.rb
+test/test_helper.rb
+test/translator_test.rb
