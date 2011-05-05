@@ -14,7 +14,7 @@ class Translator
   Request_Uri = "/ajax/services/language/translate"
   SUPPORTED_LANG_CODES = ['sr','lt','lv','iw','cy','ga','id','de','zh-TW','es','sl','ko','it','eu','az','af','sk','pt-PT','no','gl','bg','ar','tr','fa','mk','el','da','yi','ur','uk','ro','ja','zh','sw','mt','ms','is','ka','en','hr','ca','th','ru','hy','vi','tl','sv','hu','hi','fi','sq','pl','fr','et','nl','cs','zh-CN','be']
 
-  def translate( text, to, from='en' )
+  def translate( text, to, from='en')
     
     begin
       raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(to)
