@@ -21,3 +21,6 @@ gem install language-translator
   tr.translate('नमस्ते, दुनिया', 'en','hi')
 	=>"Hello World"
 
+  #From Unknown language to english   new method
+  tr.to_en('नमस्ते, दुनिया')
+  =>"Hello World"
