@@ -27,7 +27,20 @@ class TranslatorTest < Test::Unit::TestCase
     assert_equal("Hello world", tr.translate("¡Hola, mundo", "en", "es"))
     assert_equal("Hello world", tr.translate("مرحبا العالم", "en", "ar"))
   end
-
+  
+  def test_translate_from_other_to_english
+    tr = Translator.new()
+    assert_equal("Hello World", tr.to_en("नमस्ते दुनिया"))
+    assert_equal("Hello world", tr.to_en("世界您好"))
+    assert_equal("Hello world", tr.to_en("Dia duit domhan"))
+    assert_equal("Hello world", tr.to_en("こんにちは、世界"))
+    assert_equal("Hello world", tr.to_en("안녕하세요 세상"))
+    assert_equal("Hello world", tr.to_en("Olá mundo"))
+    assert_equal("Hello world", tr.to_en("Привет мир"))
+    assert_equal("Hello world", tr.to_en("¡Hola, mundo"))
+    assert_equal("Hello world", tr.to_en("مرحبا العالم"))
+  end
+  
   def test_unsupported_translate
     assert_raise UnSupportedLanguage do
       tr = Translator.new()

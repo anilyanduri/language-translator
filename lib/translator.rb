@@ -17,7 +17,8 @@ class Translator
   def translate( text, to, from='en' )
     
     begin
-      raise UnSupportedLanguage if !SUPPORTED_LANG_CODES.include?(to) || !SUPPORTED_LANG_CODES.include?(from)
+      raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(to)
+      raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(from) unless from.empty?
       
       http = Net::HTTP.new(Site_Url, 80)
 
@@ -38,9 +39,13 @@ class Translator
     rescue UnSupportedLanguage
       raise UnSupportedLanguage.new
     rescue => err_msg
-      puts #{err_msg}
+      puts "#{err_msg}"
     end
     
+  end
+
+  def to_en(text)
+    translate( text, "en", "" )
   end
 
 end
