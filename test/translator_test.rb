@@ -17,7 +17,7 @@ class TranslatorTest < Test::Unit::TestCase
   
   def test_translate_from_other_to_english
     tr = Translator.new()
-    assert_equal("Hello World", tr.translate("नमस्ते दुनिया", "en","hi"))
+    assert_equal("Hello World", tr.translate("नमस्ते दुनिया", "en","hi") )
     assert_equal("Hello world", tr.translate("世界您好", "en", "zh-CN"))
     assert_equal("Hello world", tr.translate("Dia duit domhan", "en", "ga"))
     assert_equal("Hello world", tr.translate("こんにちは、世界", "en", "ja"))

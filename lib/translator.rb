@@ -18,7 +18,7 @@ class Translator
     
     begin
       raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(to)
-      raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(from) unless from.empty?
+      raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(from) unless from.empty? # letting to translate from unknown language
       
       http = Net::HTTP.new(Site_Url, 80)
 
@@ -44,6 +44,7 @@ class Translator
     
   end
 
+  # added in 0.1.2 to support from unknown to english
   def to_en(text)
     translate( text, "en", "" )
   end
