@@ -1,5 +1,4 @@
 require File.dirname(__FILE__) + '/test_helper'
-
 class TranslatorTest < Test::Unit::TestCase
   
    def test_translate_from_english_to_other
