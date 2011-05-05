@@ -1,7 +1,7 @@
 = Translator 
 
 == Description
-A gem to translate from one language to another using google api(Unofficial).
+Ruby gem to translate from one language to another using google api.
 
 == Installation
 
