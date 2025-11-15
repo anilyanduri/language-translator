@@ -1,23 +1,47 @@
-= Translator 
+= Translator
 
 == Description
-Ruby gem to translate a string from one language to another using google api.
+Ruby gem to translate a string from one language to another using Google's public translate endpoint
+(`https://translate.googleapis.com/translate_a/single`). The integration does **not** require an API key.
 
 == Installation
 
 gem install language-translator
 
-== Usage 
+== Usage
 
-  require 'rubygems' 
-  require 'translator' 
+  require 'rubygems'
+  require 'translator'
 
-  #To translate 'Hello World' to Hindi
-  tr = Translator.new()
-  tr.translate( 'Hello, World', 'hi')     #=> "नमस्ते, दुनिया"
+  tr = Translator.new
 
-  #To translate "नमस्ते, दुनिया" to English
-  tr.translate('नमस्ते, दुनिया', 'en','hi')       #=> "Hello World"
+  # translate from English to Hindi
+  tr.translate('Hello, World', 'hi', 'en')  #=> "नमस्ते, दुनिया"
 
-  #From Unknown language to english, from 0.1.2
-  tr.to_en('नमस्ते, दुनिया')                    #=> "Hello World"
+  # translate from Japanese to English
+  tr.translate('こんにちは世界', 'en', 'ja')  #=> "Hello world"
+
+  # let Google auto-detect the source language (to English)
+  tr.to_en('¡Hola, mundo!')                #=> "Hello world"
+
+== Running tests
+
+All HTTP calls are mocked via Mocha. You can run the suite without network access:
+
+  ruby -Itest test/translator_test.rb
+
+== Trying it in IRB
+
+To experiment interactively without installing the gem:
+
+  irb -I lib
+  irb(main):001:0> require 'translator'
+  => true
+  irb(main):002:0> Translator.new.translate('Hello world', 'es', 'en')
+  => "Hola Mundo"
+
+== Supported languages
+
+`Translator::SUPPORTED_LANG_CODES` tracks every language code currently available through Google Translate
+(including legacy aliases like `iw` and `pt-PT`). Call `Translator::SUPPORTED_LANG_CODES.sort` if you need to
+inspect or display the full list.
