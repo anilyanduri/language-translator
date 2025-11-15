@@ -26,7 +26,13 @@ class Translator
     'cy', 'xh', 'yi', 'yo', 'zu'
   ]
 
-  # method to translate from one language to another
+  # Public: Translate text using Google's HTTPS endpoint.
+  #
+  # text - String containing the source text.
+  # to   - Language code for the target language (see SUPPORTED_LANG_CODES).
+  # from - Optional source language code. Provide an empty string to let Google auto-detect.
+  #
+  # Returns the translated String or nil if Google returns an empty result.
   def translate(text, to, from='en')
     begin
       raise UnSupportedLanguage unless SUPPORTED_LANG_CODES.include?(to)
@@ -43,7 +49,9 @@ class Translator
     end
   end
 
-  # added in 0.1.2 to support from unknown to english
+  # Public: Convenience helper to translate from an unknown language to English.
+  #
+  # Equivalent to translate(text, "en", "") which triggers auto language detection.
   def to_en(text)
     translate( text, "en", "" )
   end
