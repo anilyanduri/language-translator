@@ -13,7 +13,18 @@ class Translator
 
   Site_Url = 'translate.googleapis.com'
   Request_Uri = "/translate_a/single"
-  SUPPORTED_LANG_CODES = ['sr','lt','lv','iw','cy','ga','id','de','zh-TW','es','sl','ko','it','eu','az','af','sk','pt-PT','no','gl','bg','ar','tr','fa','mk','el','da','yi','ur','uk','ro','ja','zh','sw','mt','ms','is','ka','en','hr','ca','th','ru','hy','vi','tl','sv','hu','hi','fi','sq','pl','fr','et','nl','cs','zh-CN','be']
+  SUPPORTED_LANG_CODES = [
+    'af', 'sq', 'am', 'ar', 'hy', 'az', 'eu', 'be', 'bn', 'bs', 'bg', 'ca',
+    'ceb', 'ny', 'zh-CN', 'zh-TW', 'co', 'hr', 'cs', 'da', 'nl', 'en', 'eo',
+    'et', 'fil', 'fi', 'fr', 'fy', 'gl', 'ka', 'de', 'el', 'gu', 'ht', 'ha',
+    'haw', 'iw', 'he', 'hi', 'hmn', 'hu', 'is', 'ig', 'id', 'ga', 'it', 'ja',
+    'jw', 'kn', 'kk', 'km', 'rw', 'ko', 'ku', 'ky', 'lo', 'la', 'lv', 'lt',
+    'lb', 'mk', 'mg', 'ms', 'ml', 'mt', 'mi', 'mr', 'mn', 'my', 'ne', 'no',
+    'or', 'ps', 'fa', 'pl', 'pt', 'pt-PT', 'pa', 'ro', 'ru', 'sm', 'gd',
+    'sr', 'st', 'sn', 'sd', 'si', 'sk', 'sl', 'so', 'es', 'su', 'sw', 'sv',
+    'tg', 'ta', 'tt', 'te', 'th', 'tr', 'tk', 'uk', 'ur', 'ug', 'uz', 'vi',
+    'cy', 'xh', 'yi', 'yo', 'zu'
+  ]
 
   # method to translate from one language to another
   def translate(text, to, from='en')
